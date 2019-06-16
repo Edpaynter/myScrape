@@ -27,7 +27,7 @@ app.use(express.static("public"));
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:password1@ds137827.mlab.com:37827/heroku_zjttg08q";
 // Connect to the Mongo DB
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useMongoClient: true });
 
   app.listen(PORT, function() {
     console.log("App running on port " + PORT + "!");
